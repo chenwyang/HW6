@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="_Default" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="NewRecipe.aspx.vb" Inherits="RecipeDetails" %>
 
 <!DOCTYPE html>
 
@@ -39,13 +39,20 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="recipe_id" DataSourceID="sql_recipe" style="margin-right: 26px" Width="495px">
-            <Columns>
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="recipe_id" Height="50px" Width="322px" DataSourceID="sql_recipe" style="margin-right: 0px" DefaultMode="Insert">
+            <Fields>
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="submit_by" HeaderText="Submitted By" SortExpression="submit_by" />
-                <asp:HyperLinkField DataNavigateUrlFields="recipe_id" DataNavigateUrlFormatString="RecipeDetails.aspx?recipe_id={0}" HeaderText="Submitted By" Text="Select" />
-            </Columns>
-        </asp:GridView>
+                <asp:BoundField DataField="ingredient_1" HeaderText="Ingredient #1" SortExpression="ingredient_1" />
+                <asp:BoundField DataField="ingredient_2" HeaderText="Ingredient #2" SortExpression="ingredient_2" />
+                <asp:BoundField DataField="ingredient_3" HeaderText="Ingredient #3" SortExpression="ingredient_3" />
+                <asp:BoundField DataField="ingredient_4" HeaderText="Ingredient #4" SortExpression="ingredient_4" />
+                <asp:BoundField DataField="ingredient_5" HeaderText="Ingredient #5" SortExpression="ingredient_5" />
+                <asp:BoundField DataField="preparation" HeaderText="Preparation" SortExpression="preparation" />
+                <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+            </Fields>
+        </asp:DetailsView>
     
     </div>
     </form>
