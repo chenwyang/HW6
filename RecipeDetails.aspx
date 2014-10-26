@@ -42,22 +42,201 @@
                 <asp:Parameter Name="recipe_id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <span class="deletedRecipe" ><asp:Label ID="lbl_deletedRecipe" runat="server"></asp:Label></span>
+        <span class="deletedRecipe" ><asp:Label ID="lbl_deletedRecipe" runat="server"></asp:Label>
         <br />
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="recipe_id" Height="50px" Width="322px" DataSourceID="sql_recipe" style="margin-right: 0px">
-            <Fields>
-                <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
-                <asp:BoundField DataField="submit_by" HeaderText="Submitted By" SortExpression="submit_by" />
-                <asp:BoundField DataField="ingredient_1" HeaderText="Ingredient #1" SortExpression="ingredient_1" />
-                <asp:BoundField DataField="ingredient_2" HeaderText="Ingredient #2" SortExpression="ingredient_2" />
-                <asp:BoundField DataField="ingredient_3" HeaderText="Ingredient #3" SortExpression="ingredient_3" />
-                <asp:BoundField DataField="ingredient_4" HeaderText="Ingredient #4" SortExpression="ingredient_4" />
-                <asp:BoundField DataField="ingredient_5" HeaderText="Ingredient #5" SortExpression="ingredient_5" />
-                <asp:BoundField DataField="preparation" HeaderText="Preparation" SortExpression="preparation" />
-                <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-            </Fields>
-        </asp:DetailsView>
+        </span>
+    
+        <br />
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="recipe_id" DataSourceID="sql_recipe">
+            <EditItemTemplate>
+                <table>
+                    <tr>
+                        <td style="text-align:right;">
+                            Recipe Name: 
+                        </td>
+                        <td style="text-align:left;">
+                             <asp:TextBox ID="recipe_nameTextbox" runat="server" Text='<%# Bind("recipe_name") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Submitted By: 
+                        </td>
+                        <td style="text-align:left;">
+                             <asp:TextBox ID="submit_byTextBox" runat="server" Text='<%# Bind("submit_by") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #1: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:TextBox ID="ingredient_1TextBox" runat="server" Text='<%# Bind("ingredient_1") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #2: 
+                        </td>
+                        <td style="text-align:left;">
+                             <asp:TextBox ID="ingredient_2TextBox" runat="server" Text='<%# Bind("ingredient_2") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #3: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:TextBox ID="ingredient_3TextBox" runat="server" Text='<%# Bind("ingredient_3") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #4: 
+                        </td>
+                        <td style="text-align:left;">
+                             <asp:TextBox ID="ingredient_4TextBox" runat="server" Text='<%# Bind("ingredient_4") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #5: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:TextBox ID="ingredient_5TextBox" runat="server" Text='<%# Bind("ingredient_5") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Preparation: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:TextBox ID="preparationTextBox" runat="server" Text='<%# Bind("preparation") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Notes: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:TextBox ID="notesTextBox" runat="server" Text='<%# Bind("notes") %>' />
+                        </td>
+                    </tr>
+
+                  
+                </table>
+     
+                <h1 style="text-align:center;"><asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Save" /></h1>
+               
+            </EditItemTemplate>
+            <InsertItemTemplate>
+              
+              
+            </InsertItemTemplate>
+            <ItemTemplate>
+                <table>
+                    <tr>
+                        <td style="text-align:right;">
+                            Recipe Name: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="recipe_nameLabel" runat="server" Text='<%# Eval("recipe_name")%>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Submitted By: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="submit_byLabel" runat="server" Text='<%# Bind("submit_by") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #1: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="ingredient_1Label" runat="server" Text='<%# Bind("ingredient_1") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #2: 
+                        </td>
+                        <td style="text-align:left;">
+                             <asp:Label ID="ingredient_2Label" runat="server" Text='<%# Bind("ingredient_2") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingreident #3: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="ingredient_3Label" runat="server" Text='<%# Bind("ingredient_3") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #4: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="ingredient_4Label" runat="server" Text='<%# Bind("ingredient_4") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Ingredient #5: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="ingredient_5Label" runat="server" Text='<%# Bind("ingredient_5") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Preparation: 
+                        </td>
+                        <td style="text-align:left;">
+                             <asp:Label ID="preparationLabel" runat="server" Text='<%# Bind("preparation") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            Notes: 
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Label ID="notesLabel" runat="server" Text='<%# Bind("notes") %>' />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:right;">
+                            <asp:Button ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
+                        </td>
+                        <td style="text-align:left;">
+                            <asp:Button ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+                        </td>
+                    </tr>
+
+                </table>
+            
+            </ItemTemplate>
+        </asp:FormView>
     
     </div>
     </form>

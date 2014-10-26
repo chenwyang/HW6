@@ -138,8 +138,20 @@
                                 <asp:TextBox ID="tb_notes" runat="server" Text='<%# Bind("notes") %>' />
                             </td>
                         </tr>
+                        
+
+                        <tr>
+                            <td style="text-align:right;">
+                            </td>
+                            <td style="text-align:left;">
+                               <asp:Button ID="btn_insert" runat="server" CausesValidation="True" CommandName="Insert" Text="Save" />
+                            </td>
+
+                            <td>
+                            </td>
+                        </tr>
                 </table>
-                       <h1 style="text-align:center;"><asp:Button ID="btn_insert" runat="server" CausesValidation="True" CommandName="Insert" Text="Save" /></h1>
+                       
             </InsertItemTemplate>
             <ItemTemplate>
                
