@@ -8,7 +8,7 @@ Partial Class RecipeDetails
 
         lbl_deletedRecipe.Text = deletedRecipe & " has been deleted from the database."
 
-        Response.AddHeader("REFRESH", "3,URL=./Default.aspx")
+        Response.AddHeader("REFRESH", "3;URL=./Default.aspx")
         ' Response.Redirect("./Default.aspx")
 
     End Sub
