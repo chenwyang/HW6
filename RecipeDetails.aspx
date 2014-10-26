@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="./StyleSheet.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,7 +42,7 @@
                 <asp:Parameter Name="recipe_id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <span class="deletedRecipe" ><asp:Label ID="lbl_deletedRecipe" runat="server" Text="Label"></asp:Label></span>
+        <span class="deletedRecipe" ><asp:Label ID="lbl_deletedRecipe" runat="server"></asp:Label></span>
         <br />
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="recipe_id" Height="50px" Width="322px" DataSourceID="sql_recipe" style="margin-right: 0px">
             <Fields>

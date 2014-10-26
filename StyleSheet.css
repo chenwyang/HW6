@@ -3,3 +3,8 @@
 .deletedRecipe { color:red;
                  font-style:italic;
 }
+
+.vadilationError { color:red;
+                   font-weight:bold;
+
+}
