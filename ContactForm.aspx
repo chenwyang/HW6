@@ -9,10 +9,26 @@
 </head>
 
 <body>
+    <p>
+        Wicked Easy Recipes<br />
+        <br />
+        Using 5 Ingredients or Less!<br />
+        <asp:HyperLink ID="link_home" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_recipe" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_about" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_contact" runat="server" NavigateUrl="~/ContactForm.aspx">Contact</asp:HyperLink>
+    </p>
     <form id="form1" runat="server">
 
         <!-- Check to see if you are in postback.  If not, display the contact form. -->
         <% If Not IsPostBack Then%>
+
+        <br />
+        <br />
+        <br />
 
         Your email address:<br />
         <asp:TextBox ID="senderAddress" runat="server"></asp:TextBox>
@@ -36,5 +52,7 @@
         <%End If%>
 
     </form>
+    <p>
+        &copy; 2013. 6K:183 Software Design & Development</p>
 </body>
 </html>

@@ -42,9 +42,17 @@
                 <asp:Parameter Name="recipe_id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <span class="deletedRecipe" ><asp:Label ID="lbl_deletedRecipe" runat="server"></asp:Label>
+        Wicked Easy Recipes<br />
         <br />
-        </span>
+        Using 5 Ingredients or Less!<br />
+        <asp:HyperLink ID="link_home" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_recipe" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_about" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_contact" runat="server" NavigateUrl="~/ContactForm.aspx">Contact</asp:HyperLink>
+        <br />
     
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="recipe_id" DataSourceID="sql_recipe">
@@ -57,6 +65,9 @@
                         <td style="text-align:left;">
                              <asp:TextBox ID="recipe_nameTextbox" runat="server" Text='<%# Bind("recipe_name") %>' />
                         </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfv_recipeName" runat="server" ErrorMessage="Please enter the name of your recipe." ControlToValidate="recipe_nameTextbox" CssClass="vadilationError"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
 
                     <tr>
@@ -65,6 +76,9 @@
                         </td>
                         <td style="text-align:left;">
                              <asp:TextBox ID="submit_byTextBox" runat="server" Text='<%# Bind("submit_by") %>' />
+                        </td>
+                        <td>
+                             <asp:RequiredFieldValidator ID="rfv_submitBy" runat="server" ErrorMessage="Please enter your name." ControlToValidate="submit_byTextbox" CssClass="vadilationError"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
@@ -75,6 +89,9 @@
                         <td style="text-align:left;">
                             <asp:TextBox ID="ingredient_1TextBox" runat="server" Text='<%# Bind("ingredient_1") %>' />
                         </td>
+                        <td>
+                             <asp:RequiredFieldValidator ID="rfv_ingred1" runat="server" ErrorMessage="Please enter at least one ingredient." ControlToValidate="ingredient_1TextBox" CssClass="vadilationError"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
 
                     <tr>
@@ -84,6 +101,7 @@
                         <td style="text-align:left;">
                              <asp:TextBox ID="ingredient_2TextBox" runat="server" Text='<%# Bind("ingredient_2") %>' />
                         </td>
+
                     </tr>
 
                     <tr>
@@ -119,6 +137,9 @@
                         </td>
                         <td style="text-align:left;">
                             <asp:TextBox ID="preparationTextBox" runat="server" Text='<%# Bind("preparation") %>' />
+                        </td>
+                        <td>
+                             <asp:RequiredFieldValidator ID="rfv_prep" runat="server" ErrorMessage="Please enter how to prepare the meal." ControlToValidate="preparationTextbox" CssClass="vadilationError"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
@@ -226,7 +247,7 @@
 
                     <tr>
                         <td style="text-align:right;">
-                            <asp:Button ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
+                            <asp:Button ID="EditButton" runat="server" CausesValidation="True" CommandName="Edit" Text="Edit" />
                         </td>
                         <td style="text-align:left;">
                             <asp:Button ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
@@ -240,5 +261,7 @@
     
     </div>
     </form>
+    <p>
+        &copy; 2013. 6K:183 Software Design & Development</p>
 </body>
 </html>

@@ -39,6 +39,17 @@
                 <asp:Parameter Name="recipe_id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
+        Wicked Easy Recipes<br />
+        <br />
+        Using 5 Ingredients or Less!<br />
+        <asp:HyperLink ID="link_home" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_recipe" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_about" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_contact" runat="server" NavigateUrl="~/ContactForm.aspx">Contact</asp:HyperLink>
+        <br />
         <br />
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="recipe_id" DataSourceID="sql_recipe" DefaultMode="Insert">
             <EditItemTemplate>
@@ -161,5 +172,7 @@
 
     </div>
     </form>
+    <p>
+        &copy; 2013. 6K:183 Software Design & Development</p>
 </body>
 </html>
