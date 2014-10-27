@@ -3,7 +3,7 @@ Imports System.Net.Mail
 Imports System.Net
 
 
-Partial Class _default
+Partial Class contact
     Inherits System.Web.UI.Page
 
     Protected Sub sendMail_Click(sender As Object, e As EventArgs) Handles sendMail.Click

@@ -51,7 +51,7 @@
 &nbsp;|
         <asp:HyperLink ID="link_about" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
 &nbsp;|
-        <asp:HyperLink ID="link_contact" runat="server" NavigateUrl="~/ContactForm.aspx">Contact</asp:HyperLink> </h3>
+        <asp:HyperLink ID="link_contact" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink> </h3>
         
         <p >
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="recipe_id" DataSourceID="sql_recipe" style="margin-right: 26px" Width="495px">

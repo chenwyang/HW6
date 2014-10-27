@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="default.aspx.vb" Inherits="_default" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Contact.aspx.vb" Inherits="contact" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,23 @@
 
 <head runat="server">
     <title>Web Contact Form</title>
+     <link rel="stylesheet" type="text/css" href="./StyleSheet.css" />
+</head>
 </head>
 
 <body>
+    <center>
+            <h1>Wicked Easy Recipes</h1>
+      
+        <h2>Using 5 Ingredients or Less!</h2>
+        <h3><asp:HyperLink ID="link_home" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_recipe" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_about" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="link_contact" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink>
+            </h3>
     <form id="form1" runat="server">
 
         <!-- Check to see if you are in postback.  If not, display the contact form. -->
@@ -36,5 +50,8 @@
         <%End If%>
 
     </form>
+     <h3>
+        &copy; 2013. 6K:183 Software Design & Development</h3>
+        </center>
 </body>
 </html>
