@@ -11,7 +11,7 @@ Partial Class _default
         Dim msg As New MailMessage
         Dim client As New SmtpClient
 
-        msg.To.Add("ui.6k183@gmail.com")  'destination email address
+        msg.To.Add("michael-colbert@uiowa.edu")  'destination email address
         msg.From = New MailAddress(senderAddress.Text)  'get the address from the textbox
         msg.Subject = "web contact form test"  'set the message subject line
         msg.Body = senderMessage.Text  'get the message body from the textbox
@@ -28,7 +28,7 @@ Partial Class _default
         senderMessage.Text = ""
 
         'Write into the label that the message has been sent.
-        confirmSent.Text = "Thank you. Your message has been sent."
+        confirmSent.Text = "Thank you.  Your message has been sent."
 
         'After the message has displayed for 2 seconds, "reload" the page.
         Response.AddHeader("REFRESH", "2;URL=default.aspx")
